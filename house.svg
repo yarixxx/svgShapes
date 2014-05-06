@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="snowflakes.css" ?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2000 100%">
+  <title>House</title>
+<defs>
+
+  <path id="roof" d="
+      M 89,2 68,30 C 68,30 57,30 12,30 L 2,92 34,92 34,60 60,60 60,92 77,92 77,60 102,60 102,92 120,92 120,60 145,60 145,92 162,92 162,60 187,60 187,92 220,92 210,30 C 210,30 181,30 154,30 L 133,2 z M 110,7 C 125,7 137,15 137,24 137,33 125,41 110,41 96,41 84,33 84,24 84,15 96,7 110,7 z
+  " />
+
+  <path id="body" d="
+M 217,255 H 210 V 90 H 12 V 255 H 4 V 272 H 217 V 255 z M 59,241 H 34 V 195 H 59 V 241 z M 59,170 H 34 V 124 H 59 V 170 z M 102,241 H 77 V 195 H 102 V 241 z M 102,170 H 77 V 124 H 102 V 170 z M 145,241 H 120 V 195 H 145 V 241 z M 145,170 H 120 V 124 H 145 V 170 z M 187,241 H 162 V 195 H 187 V 241 z M 187,170 H 162 V 124 H 187 V 170 z
+"/>
+
+</defs>
+
+
+<use x="10" y="10" xlink:href="#roof" />
+<use x="10" y="10" xlink:href="#body" />
+
+</svg>
