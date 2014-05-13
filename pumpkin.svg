@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="pumpkin.css" ?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="100%" height="100%" 
+     viewBox="0 0 1500 800" preserveAspectRatio="none">
+  <title>Halloween with SVG</title>
+  <meta name="viewport" content="user-scalable=no" />
+<defs>
+
+<g id="pumpkin">
+  <path class="part" d="M 83,58 C 50,46 1,80 1,132 2,184 79,189 71,177 41,132 64,106 83,58 z" />
+  <path class="part" d="M 120,60 C 155,47 205,82 205,134 204,185 124,191 133,179 164,134 140,107 120,60 z"/>
+  <path class="part2" d="M 91,65 84,59 C 84,59 32,93 33,138 35,183 99,203 91,182 69,129 75,112 91,65 z M 114,66 121,60 C 121,60 173,95 171,139 170,183 105,203 114,183 135,130 130,113 114,66 z">
+    <animateColor id="strokeAnimate" attributeName="stroke"
+      from="#ff5400" to="#ff7937"
+      dur="5s" repeatCount="indefinite" />
+  </path>
+  <path class="center-part" d="M 113,67 C 131,92 152,190 103,192 55,193 74,98 90,65 100,74 101,72 113,67 z">
+    <animateColor attributeName="stroke"
+      from="#ff5400" to="#ff7937"
+      dur="5s" repeatCount="indefinite" />
+  </path>
+  <path class="nose" d="M 110,71 C 122,85 136,140 103,141 70,142 83,89 94,70 101,76 101,74 110,71 z" />
+  <path class="tail" d="M 83,59 C 77,63 90,73 99,74 109,75 124,68 127,57 100,45 118,45 112,10 103,2 69,3 63,30 105,0 113,36 83,59 z"/>
+
+  <path id="eyes" class="holes" d="
+    M 56,92 70,98 71,109 49,104 z
+    M 145,88 132,94 132,105 153,99 z">
+    <animateColor attributeName="fill"
+      from="#000" to="#ffff00"
+      dur="5s" repeatCount="indefinite" />
+  </path>
+  <path id="mouth" class="holes" d="M 115,156 129,150 125,169 100,161 88,168 78,150 z">
+    <animateColor attributeName="fill"
+      begin="2s"
+      from="#421a01" to="#ffff00"
+      dur="1s" repeatCount="indefinite" />
+  </path>
+</g>
+
+  <g id="pumpkin2">
+    <g class="slide">
+      <path
+       d="M 127,77 C 74,65 3,90 5,156 7,223 69,241 132,239 190,239 255,224 256,146 257,84 173,62 127,77 z"/>
+      <path
+       d="M 113,75 C 8,133 36,189 117,239"/>
+      <path
+       d="M 152,75 C 252,118 219,188 155,239"/>
+      <path
+       d="M 141,77 C 180,129 170,186 144,237"/>
+      <path
+       d="M 122,80 C 88,133 83,168 133,238"/>
+    </g>
+
+    <path
+       d="M 141,1 157,8 C 157,8 143,51 150,76 135,76 118,86 111,75 136,53 141,1 141,1z" class="tail"/>
+
+    <g class="hole">
+      <path
+       d="M 172,117 167,132 207,128 191,113 z"/>
+      <path
+       d="M 106,114 110,129 75,125 89,110 z"/>
+      <path
+       d="M 98,168 121,172 161,162 186,189 118,190 76,194 z"/>
+    </g>
+  </g>
+
+</defs>
+
+<rect x="20" y="20" width="300" height="250" rx="5" ry="20" fill="#571200" />
+
+<use x="50" y="50" xlink:href="#pumpkin" />
+
+<use x="400" y="30" xlink:href="#pumpkin2" />
+
+
+</svg>
