@@ -1,0 +1,55 @@
+/* Pumpkin */
+#pumpkin .tail {
+  fill: #33553a
+}
+
+#pumpkin .part {
+  fill: #d2501d;
+}
+
+#pumpkin .part2 {
+  fill: #d2501d;
+  stroke: #ac430f;
+  stroke-width: 3;
+  stroke-opacity: 0.5
+}
+
+#pumpkin .center-part {
+  fill: #d2501d;
+  stroke: #ac430f;
+  stroke-width: 3;
+  stroke-opacity: 0.5
+}
+
+#pumpkin .nose {
+  fill: #bd5c22;
+  stroke: #ac430f;
+  stroke-width: 3;
+  stroke-opacity: 0.5
+}
+
+#pumpkin .holes {
+  fill: #421a01;
+  stroke: #ac430f;
+  stroke-width: 3;
+  stroke-opacity: 0.5
+}
+
+/* Pumpkin 2 */
+#pumpkin2 .slide path {
+  fill:#ff7f2a;
+  stroke:#000;
+  stroke-width:1px;
+}
+
+#pumpkin2 .tail {
+  fill:#008000;
+  stroke:#000;
+  stroke-width:1px;
+}
+
+#pumpkin2 .hole path {
+  fill:#ffff00;
+  stroke:#000;
+  stroke-width:1px;
+}
