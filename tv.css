@@ -1,0 +1,55 @@
+.template {
+  fill-rule: evenodd
+}
+
+.leg-line, .antenna-line {
+  stroke-width: 5;
+  stroke: #000;
+  fill: none
+}
+
+.cap {
+  fill: #000
+}
+
+.antenna-set {
+  fill: #555
+}
+
+#switchOne {
+  fill: #999;
+  cursor: pointer
+}
+
+#switchTwoButton circle,
+#switchOneButton circle {
+  fill: #111
+}
+
+#switchTwo {
+  fill: #aa1133;
+  stroke-width: 1;
+  stroke: #000;
+  cursor: pointer
+}
+
+#led1, #led2, #led3 {
+  fill: #000;
+  stroke: #333;
+  stroke-width: 1
+}
+
+#patternTvBody rect {
+  fill:#222
+}
+
+#patternTvBody path {
+  stroke:#111;
+  stroke-width:3
+}
+
+
+#textSVG {
+  font-size: 50px;
+  fill: #fff
+}
