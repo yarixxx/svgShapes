@@ -12,6 +12,10 @@
     <g id="airplaneInstance1">
       <use xlink:href="#airplane200" transform="rotate(90)"/>
     </g>
+	
+	<g id="airplaneShadow">
+      <use xlink:href="#airplane200" transform="rotate(90)" opacity=".1"/>
+    </g>
 
     <path id="trap"
        style="fill:none;stroke:#000"
@@ -24,7 +28,8 @@
 
   <use xlink:href="#trap" />
 
-  <use xlink:href="#airplaneInstance1" transform="scale(.5)">
+  <!-- Shadow -->
+  <use xlink:href="#airplaneShadow" transform="scale(.3)">
     <animateMotion
       dur="15s"
       rotate="auto"
@@ -38,7 +43,7 @@
       attributeType="XML"
       type="scale"
       fill="freeze" additive="replace"
-      from=".5" to="1"
+      from=".3" to="1"
       dur="2s"
       begin="0s"
       repeatCount="1"
@@ -49,7 +54,41 @@
       attributeType="XML"
       type="scale"
       fill="freeze" additive="replace"
-      from="1" to=".5"
+      from="1" to=".3"
+      dur="2s"
+      begin="12s"
+      repeatCount="1"
+    />
+
+  </use>
+  
+ 
+  <use xlink:href="#airplaneInstance1" transform="scale(.3)">
+    <animateMotion
+      dur="15s"
+      rotate="auto"
+      fill="freeze" additive="replace"
+      repeatCount="1">
+      <mpath xlink:href="#trap" />
+    </animateMotion>
+
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="scale"
+      fill="freeze" additive="replace"
+      from=".3" to=".7"
+      dur="2s"
+      begin="0s"
+      repeatCount="1"
+    />
+
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="scale"
+      fill="freeze" additive="replace"
+      from=".7" to=".3"
       dur="2s"
       begin="12s"
       repeatCount="1"
