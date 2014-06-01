@@ -1,0 +1,4 @@
+.plane:hover {
+  cursor: pointer;
+  fill: red;
+}
