@@ -1,0 +1,8 @@
+<project name="TestAnt" default="all">
+  <target name="all" description="Super Ant!">
+    <!--xslt basedir="." destdir="." includes="planeIndex.xml" style="concat.xsl" extension="Concat.xml"/-->
+    <xslt basedir="." destdir="." includes="planeIndexConcat.xml" style="compile.xsl" extension="result.svg"/>
+  </target>
+</project>
+
+    

@@ -1,0 +1,14 @@
+.plane {
+  fill: #555;
+}
+
+.plane:hover {
+  cursor: pointer;
+  fill: #000;
+}
+
+.plane circle {
+  fill: none;
+  stroke-width: 1;
+  stroke: #555
+}
