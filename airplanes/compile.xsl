@@ -6,14 +6,20 @@
   doctype-public="-//W3C//DTD SVG 1.1//EN"
   doctype-system="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"/>
 
-    <xsl:template match="/svgRoot">
+    <xsl:template match="/svgRoot" xmlns:xlink="http://www.w3.org/1999/xlink">
       <svg>
         <defs>
+          <path id="trap"/> 
        	  <xsl:copy-of select="*[local-name() = 'path']"/>
        	  <xsl:copy-of select="*[local-name() = 'g']"/>
         </defs>
 
-        <xsl:apply-templates select="*[local-name() = 'g']" />
+        <g id="airplaneList">        
+          <xsl:apply-templates select="*[local-name() = 'g']" />
+        </g>
+
+        <g id="animationFrame"></g>
+        <script xlink:href="airplaneResult.js"></script>  
       </svg>
     </xsl:template>
 
