@@ -7,23 +7,50 @@ var trap = document.getElementById("trap");
 
 var plane;
 var motion;
+var startMotion;
+var orderPlane;
 
 airplaneList.addEventListener("click", function(event) {
+  orderPlane = getAirPlaneElement(event.x, event.y);
+  
   if (!plane) {
     plane = createAirplane(event.toElement.parentNode.parentNode.id);
   } else {
     plane.setAttributeNS(XLINKNS, "xlink:href", "#" + event.toElement.parentNode.parentNode.id);
   }
   if (!motion) {
-    console.log(event);
     motion = createAirplaneMotion(10);
+	
+	motion.addEventListener("beginEvent", function(e) {
+		orderPlane.setAttribute("opacity", 0);
+		startMotion = e.timeStamp;
+	});
+  
+	motion.addEventListener("endEvent", function(e) {
+		if (startMotion + 999 > e.timeStamp) { return; } 
+		plane.parentNode.removeChild(plane);
+		plane = undefined;
+		motion = undefined;
+		orderPlane.setAttribute("opacity", 1);
+	});
+	
     plane.appendChild(motion);
   }
 
-  trap.setAttribute("d", "M " + event.x + "," + event.y + " C " + event.x + "," + event.y + "  -159.9,1013 509.7,802.9 1179,592.4 340.3,366.9 " + event.x + "," + event.y)
+  trap.setAttribute("d", "M " + event.x + "," + event.y + " C " + event.x + "," + event.y + "  -159.9,1013 509.7,802.9 1179,592.4 340.3,366.9 " + event.x + "," + event.y);
 
   motion.beginElement();
 });
+
+function getAirPlaneElement(x, y) {
+	var uses = airplaneList.children;
+	for (var i = 0; i < uses.length; i++) {
+		var useX = uses[i].getAttribute("x");
+		if (x - 30 < useX && useX < x + 30) {
+			return uses[i];
+		}
+	}
+}
 
 function createAirplane(airplaneId) {
   var newElement = document.createElementNS(SVGNS, 'use');
@@ -36,7 +63,7 @@ function createAirplaneMotion(duration) {
   var newElement = document.createElementNS(SVGNS, 'animateMotion');
   newElement.setAttribute("dur", duration + "s");
   newElement.setAttribute("rotate", "auto");
-  newElement.setAttribute("fill", "remove"); // freeze
+  newElement.setAttribute("fill", "freeze"); // freeze
   newElement.setAttribute("additive", "replace");
   newElement.setAttribute("repeatCount", "1");
 
