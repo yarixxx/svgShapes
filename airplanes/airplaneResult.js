@@ -7,7 +7,6 @@ var trap = document.getElementById("trap");
 
 var plane;
 var motion;
-var startMotion;
 var orderPlane;
 
 airplaneList.addEventListener("click", function(event) {
@@ -20,19 +19,16 @@ airplaneList.addEventListener("click", function(event) {
   }
   if (!motion) {
     motion = createAirplaneMotion(10);
-	
-	motion.addEventListener("beginEvent", function(e) {
-		orderPlane.setAttribute("opacity", 0);
-		startMotion = e.timeStamp;
-	});
-  
-	motion.addEventListener("endEvent", function(e) {
-		if (startMotion + 999 > e.timeStamp) { return; } 
-		plane.parentNode.removeChild(plane);
-		plane = undefined;
-		motion = undefined;
-		orderPlane.setAttribute("opacity", 1);
-	});
+	  orderPlane.setAttribute("opacity", 0);
+
+	  setTimeout(function() {
+	  	plane.parentNode.removeChild(plane);
+	  	plane = undefined;
+	  	motion = undefined;
+	  	orderPlane.setAttribute("opacity", 1);
+    }, 10000);
+
+    
 	
     plane.appendChild(motion);
   }
@@ -43,7 +39,7 @@ airplaneList.addEventListener("click", function(event) {
 });
 
 function getAirPlaneElement(x, y) {
-	var uses = airplaneList.children;
+	var uses = airplaneList.childNodes;
 	for (var i = 0; i < uses.length; i++) {
 		var useX = uses[i].getAttribute("x");
 		if (x - 30 < useX && useX < x + 30) {
