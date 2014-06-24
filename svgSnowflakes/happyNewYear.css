@@ -1,0 +1,19 @@
+#tplSnowFlake1,
+#tplSnowFlake2,
+#tplSnowFlake3 {
+  stroke: #fff;
+  fill: none;
+  stroke-width: 0.7
+}
+
+#tplNewYearLabel,
+#bottomGround,
+#head,
+#crop,
+#panorama circle {
+  fill: #fff
+}
+
+#sky {
+  fill: #0b2228
+}

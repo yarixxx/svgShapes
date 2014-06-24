@@ -1,0 +1,15 @@
+.templateSnowflake {
+  stroke: blue;
+  stroke-width: 2;
+  fill: none
+}
+
+.templateSnowflakeFull {
+  fill: blue
+}
+
+#snowflakeFrame {
+  fill: none;
+  stroke-width: 2;
+  stroke: #000
+}
