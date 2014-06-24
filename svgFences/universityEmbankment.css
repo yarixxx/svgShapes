@@ -1,0 +1,15 @@
+#tplMeandr {
+    stroke: #222;
+    stroke-width: 4;
+    fill: none;
+}
+
+#circles ellipse.small {
+    fill: #000;
+}
+
+#circles ellipse {
+    stroke: #000;
+    stroke-width: 3;
+    fill: none;
+}

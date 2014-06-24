@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="fontankaEmbankment.css" ?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1">
+  <title>The Fontanka Embankment</title>
+  <desc>Fence installed on the embankment of the Fontanka river in Saint-Petersburg</desc>
+  <defs>
+    <path id="column" d="M 11,0 4.5,6.5 4.5,123 2.5,127 0,127 0,151 67,151 67,127 64,127 60.5,123 60.5,123 60.5,6.5 54,0 z" />
+
+    <path id="connector" d="M 0,10 4,10 C 4,10 4,0 13,1 21,0.6 21,10 21,10 L 25,10" />
+    <use id="flipedConnector" xlink:href="#connector" transform="scale(1,-1)" />
+
+    <pattern id="fencePattern" patternUnits="userSpaceOnUse" x="0" y="0" width="43.5" height="135">
+      <rect x="1" y="10" width="20" height="107" stroke="#000" stroke-width="2" fill="none" />
+      <use x="20" y="0" xlink:href="#connector" fill="none" stroke-width="2" stroke="#000" />
+      <use x="20" y="127" xlink:href="#flipedConnector" fill="none" stroke-width="2" stroke="#000" />
+    </pattern>
+
+    <g id="handrail">
+      <rect width="455" height="5" />
+      <rect width="455" height="135" fill="url(#fencePattern)" transform="translate(0,5)" />
+      <rect y="132" width="455" height="3" />
+    </g>
+
+    <g id="fenceFontanka">
+      <use x="49" y="12" xlink:href="#handrail" />
+      <use x="-11" xlink:href="#column" />
+      <use x="497" xlink:href="#column" />
+    </g>
+
+    <pattern id="patternFenceFontanka" patternUnits="userSpaceOnUse" x="0" y="0" width="509" height="156">
+      <use xlink:href="#fenceFontanka"/>
+    </pattern>
+
+    <rect id="fenceBorder" width="100%" height="176" fill="url(#patternFenceFontanka)" transform="translate(0,-150)" />
+
+  </defs>
+
+  <use xlink:href="#fenceBorder" y="100%" />
+
+</svg>

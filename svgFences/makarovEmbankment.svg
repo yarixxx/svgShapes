@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="makarovEmbankment.css" ?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1">
+  <title>The Makarov's Embankment</title>
+  <desc>Fence installed on the Makarov's Embankment in Saint-Petersburg</desc>
+  <defs>
+    <path id="column" d="M16,0 9,6 9,163 4,170 0,170 0,193 78,193 78,170 74,170 70,163 70,163 70,6 63,0 z" />
+
+    <path id="connector" d="M 0,0 3,8 13,8 16,0 z"/>
+    <use id="flipedConnector" xlink:href="#connector" transform="scale(1,-1)" />
+
+    <pattern id="rounds" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="30">
+      <circle cx="0" cy="17" r="12" />
+      <circle cx="50" cy="17" r="12" />
+      <circle cx="100" cy="17" r="12" />
+    </pattern>
+
+    <pattern id="circles" patternUnits="userSpaceOnUse" x="0" y="0" width="100" height="150">
+      <use x="42" xlink:href="#connector" />
+      <use x="-9" xlink:href="#connector" />
+      <use x="92" xlink:href="#connector" />
+      <ellipse cx="0" cy="67" rx="34" ry="60" />
+      <ellipse cx="50" cy="67" rx="34" ry="60" />
+      <ellipse cx="100" cy="67" rx="34" ry="60" />
+      <use x="42" y="135" xlink:href="#flipedConnector"/>
+      <use x="-9" y="135" xlink:href="#flipedConnector"/>
+      <use x="92" y="135" xlink:href="#flipedConnector"/>
+    </pattern>
+
+    <rect id="rail" width="100%" height="5" />
+
+    <g id="handrail">
+      <use xlink:href="#rail" />
+      <rect width="100%" height="30" fill="url(#rounds)" />
+      <use y="29" xlink:href="#rail" />
+      <rect width="100%" height="150" fill="url(#circles)" transform="translate(0,33)" />
+      <use y="167" xlink:href="#rail" />
+    </g>
+
+    <g id="fenceMakarov">
+      <use x="59" y="17" xlink:href="#handrail" />
+      <use x="-11" xlink:href="#column" />
+      <use x="600" xlink:href="#column" />
+    </g>
+
+    <pattern id="patternFenceMakarov" patternUnits="userSpaceOnUse" x="0" y="0" width="611" height="193">
+      <use xlink:href="#fenceMakarov"/>
+    </pattern>
+
+    <rect id="fenceBorder" width="100%" height="195" fill="url(#patternFenceMakarov)" transform="translate(0,-193)" />
+
+  </defs>
+
+  <use xlink:href="#fenceBorder" y="100%" />
+
+</svg>

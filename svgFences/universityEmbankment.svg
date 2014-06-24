@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="universityEmbankment.css" ?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1">
+  <title>The University Embankment</title>
+  <desc>Fence installed on the University Embankment in Saint-Petersburg</desc>
+  <defs>
+    <path id="column" d="M 18,3 11,10 11,140 4,147 0,147 0,178 82,178 82,147 78,147 72,140 72,140 72,10 65,3 z" />
+
+    <path id="tplMeandr" d="M0,-2 0,15 19,15 19,6 13,6 13,9.5 7,9.5 7,0 26,0" />
+
+    <pattern id="meandr"
+      patternUnits="userSpaceOnUse"
+      x="0" y="0" width="26" height="25">
+      <use x="2" y="2" xlink:href="#tplMeandr" />
+    </pattern>
+
+    <pattern id="circles" patternUnits="userSpaceOnUse" x="0" y="0" width="69" height="119">
+      <ellipse cx="0" cy="58" rx="34" ry="58" />
+      <ellipse cx="34" cy="58" rx="34" ry="58" />
+      <ellipse cx="68" cy="58" rx="34" ry="58" />
+      <ellipse cx="34" cy="58" ry="12" rx="7" class="small" />
+      <ellipse cx="69" cy="58" ry="12" rx="7" class="small" />
+      <ellipse cx="0" cy="58" ry="12" rx="7" class="small" />
+    </pattern>
+
+    <pattern id="basement" patternUnits="userSpaceOnUse" x="0" y="0" width="200" height="12">
+      <circle cx="26" cy="6" r="6" />
+    </pattern>
+
+    <g id="handrail">
+      <rect width="450" height="5" />
+      <rect width="450" height="20" fill="url(#meandr)" transform="translate(0,5.1)" />
+      <rect width="450" height="5" y="24" />
+      <rect width="450" height="119" fill="url(#circles)" transform="translate(0,29)" />
+      <rect width="450" height="5" y="146" />
+      <rect width="450" height="12" fill="url(#basement)" transform="translate(0,149)" />
+    </g>
+
+    <g id="fenceUniversity">
+      <use x="60" y="17" xlink:href="#handrail" />
+      <use x="-11" xlink:href="#column" />
+      <use x="498" xlink:href="#column" />
+    </g>
+
+    <pattern id="patternFenceUniversity" patternUnits="userSpaceOnUse" x="0" y="0" width="509" height="179">
+      <use xlink:href="#fenceUniversity"/>
+    </pattern>
+
+    <rect id="fenceBorder" width="100%" height="178" fill="url(#patternFenceUniversity)" transform="translate(0,-177)" />
+
+  </defs>
+
+  <use xlink:href="#fenceBorder" y="100%" />
+
+</svg>

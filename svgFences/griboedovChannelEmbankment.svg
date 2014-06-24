@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="griboedovChannelEmbankment.css" ?>
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1">
+  <title>The Griboedov Channel Embankment</title>
+  <desc>Fence installed on the Griboedov Channel Embankment in Saint-Petersburg</desc>
+  <defs>
+    <path id="column" d="M 11.01,5.872 8.96,13.85 C 8.96,13.85 0.92,13.86 0.84,20.83 0.76,27.86 5.27,27.82 5.27,27.82 5.27,27.82 5.47,30.58 7.19,30.72 8.91,30.86 7.15,33.5 7.14,34.86 7.11,36.86 8.92,36.8 8.92,36.8 L 8.72,196 0.51,203 0.51,233 86.93,233 86.93,203 80.37,196 80.37,196 80.37,36.8 C 80.37,36.8 82.24,36.86 82.26,34.86 82.28,33.31 80.45,30.86 82.27,30.75 84.04,30.64 84.03,27.82 84.03,27.82 84.03,27.82 88.33,27.86 88.33,20.63 88.33,13.84 80.47,13.85 80.47,13.85 L 78.37,5.872 44.69,1.241 z" />
+    <path id="columnDecor" d="M 9.083,0.507 C 7.783,4.206 4.683,7.006 0.7785,8.006 L 0.7785,129.3 C 5.683,130.4 9.483,134.4 9.983,139.4 L 45.2,139.4 C 45.7,134.8 48.9,131 53.2,129.5 L 53.2,7.806 C 49.6,6.706 46.8,4.006 45.5,0.507 z" />
+    
+    <g id="columnFixed">
+      <use xlink:href="#column" />
+      <use xlink:href="#columnDecor" x="18" y="45"  />
+    </g>
+
+    <path id="stallElement" d="M 1.2,0.56 1.3,10.7 7.7,11.4 7.8,18.4 13.3,18.9 14,24.5 C 6.4,27 1,34.3 1,42.8 L 1,132.6 C 1,139.2 4.3,145.2 9.4,148.6 L 9.4,153.2 C 9.4,153.2 9.4,156.2 3.6,158.8 9.4,166.2 7.1,166.2 7.1,166.2 L 0.8,167.7 0.8,176 38.1,176 38.1,167.1 31.9,166.2 C 31.9,166.2 29.3,166.2 35.3,158.7 29.3,156.2 29.4,153.2 29.4,153.2 L 29.3,148.9 C 34.6,145.5 38.1,139.4 38.1,132.6 L 38.1,42.8 C 38.1,34.4 32.9,27.2 25.5,24.6 L 26,19 31.5,18.4 31.5,11.5 37.5,10.6 37.5,0.56 1.2,0.56 z M 19.6,31.6 C 25.4,31.6 30.1,36.4 30.1,42.8 L 30.1,132.6 C 30.1,139 25.4,143.8 19.6,143.8 13.7,143.8 9,139 9,132.6 L 9,42.8 C 9,36.4 13.7,31.6 19.6,31.6 z"/>
+
+    <pattern id="circles" patternUnits="userSpaceOnUse" x="0" y="0" width="60" height="181">
+      <use x="20" xlink:href="#stallElement" />
+    </pattern>
+
+    <rect id="rail" width="100%" height="9" />
+
+    <g id="handrail">
+      <use xlink:href="#rail" />
+      <rect width="100%" height="181" fill="url(#circles)" transform="translate(0,5)" />
+      <use y="181" xlink:href="#rail" />
+      <rect y="188" width="100%" height="28" />
+    </g>
+
+    <g id="fenceGribiedov">
+      <use x="59" y="17" xlink:href="#handrail" />
+      <use x="-11" xlink:href="#columnFixed" />
+      <use x="600" xlink:href="#columnFixed" />
+    </g>
+
+    <pattern id="patternFenceGribiedov" patternUnits="userSpaceOnUse" x="0" y="0" width="611" height="293">
+      <use xlink:href="#fenceGribiedov"/>
+    </pattern>
+
+    <rect id="fenceBorder" width="100%" height="295" style="fill:url(#patternFenceGribiedov)" transform="translate(0,-233)" />
+
+  </defs>
+
+  <use xlink:href="#fenceBorder" y="100%" />
+
+</svg>
